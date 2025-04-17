@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pearl Dash</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #cceeff, #ffffff);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    #gameContainer {
+      position: relative;
+      width: 360px;
+      margin: 0 auto;
+    }
+    #gameCanvas {
+      display: block;
+      background: #eef6f9;
+      border: 3px solid #ddd;
+    }
+    #scoreBoard, #timer {
+      position: absolute;
+      top: 10px;
+      background: rgba(255,255,255,0.9);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      z-index: 2;
+      border: 2px solid #ccc;
+    }
+    #scoreBoard {
+      left: 10px;
+      display: none;
+    }
+    #timer {
+      right: 10px;
+      display: none;
+    }
+    #startScreen, #gameOverScreen {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      background: rgba(255,255,255,0.9);
+      padding: 15px 25px;
+      border-radius: 10px;
+      z-index: 3;
+      text-align: center;
+    }
+    #startScreen {
+      top: 150px;
+      font-size: 14px;
+    }
+    #startScreen button, #gameOverScreen button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #88d;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+    }
+    #gameOverScreen {
+      top: 220px;
+      display: none;
+    }
+    #mhLogo {
+      display: block;
+      margin: 0 auto 10px auto;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Game content goes here, omitted for brevity -->
+</body>
+</html>
