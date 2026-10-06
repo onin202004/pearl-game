@@ -24,7 +24,7 @@ cut and timing stay the same. Body starts at "Six months later…" (VID1 0:16.64
 | H2 Clubhouse Swing | Claude | S1–S4 done, rough cut v1 (`H2_Clubhouse/`) |
 | H3 Ballroom Dance | **Codex** (do NOT generate) | in Higgsfield, by Codex |
 | H4 Landscaper/Patio | Claude | S1–S4 + 6 extra angles, fast-pace rough cut v2 (`H4_Patio/`, `H4_Patio/Angles/`) |
-| H5 Gym (winning hook) | Claude | recast only, see below |
+| H5 Gym (winning hook) | Claude | S1–S3 new + S4 reused (H2), rough cut v1 (`H5_Gym/SL_A41462OLD_H5_Gym_RoughCut_v1.mp4`, 16.1 s) |
 
 ## REUSE before you generate
 **S4 Hallway (Rachel's parting words) is already made — it is the shared S4 for every hook. Do not regenerate it.**
@@ -39,9 +39,9 @@ S3A rear driveway, S3B inside cab) in `H4_Patio/Angles/`.
 ## H5 Gym (winning hook) — VID1 0–16.64 s
 | Shot | Time | VO (original audio kept) | Plan |
 |---|---|---|---|
-| S1 recliner | 0–3.7 | "She used to say she went to the gym to do squats" | v2 "intense" keyframe S1-A (job `a9fe5b2a-5228-4d39-a5e1-e8b1385ed180`) APPROVED → Omni 4 s |
-| S2 squats | 3.72–7.44 | "…just not with weights" | User asked for a new angle + more realistic: new keyframe S2-A wide (secret-watcher view behind dumbbell rack), wardrobe fixed to match S1 (black tank + black shorts w/ white trim) → job `6a839ec7-82ce-466c-a7ac-73e320acd39a`, APPROVED. Original footage kept as fallback: `H5_Gym/SL_A41462OLD_H5_S2_Squats_OriginalVID1.mp4`. Explicit squat-over-trainer wording trips the nsfw filter; keep it tame. |
-| S3 gym desk | 7.4–10.0 | "…personal trainer I was paying for" | User redirected: Mike seen FROM BEHIND at the desk paying (cash + payment slip) while the S2 squat is visible in the background. Options: A `26e1ca55-c48c-48b3-a778-9d14a1dc2246` (3/4 back, he watches them, logo cropped), B `e20b3475-4a06-40a2-8870-0af0fe8fad70` (full back, logo intact) — awaiting pick. (Older face-on S3 options 6cc860d6/4b60e392 dropped.) |
+| S1 recliner | 0–3.7 | "She used to say she went to the gym to do squats" | v2 "intense" keyframe S1-A (job `a9fe5b2a-5228-4d39-a5e1-e8b1385ed180`) APPROVED → `H5_Gym/SL_A41462OLD_H5_S1_Recliner_GeminiOmni_v1.mp4` |
+| S2 squats | 3.72–7.44 | "…just not with weights" | User asked for a new angle + more realistic: new keyframe S2-A wide (secret-watcher view behind dumbbell rack), wardrobe fixed to match S1 (black tank + black shorts w/ white trim) → job `6a839ec7-82ce-466c-a7ac-73e320acd39a`, APPROVED, animated: `H5_Gym/SL_A41462OLD_H5_S2_GymSquat_GeminiOmni_v1.mp4`. Original footage kept as fallback: `H5_Gym/SL_A41462OLD_H5_S2_Squats_OriginalVID1.mp4`. Explicit squat-over-trainer wording trips the nsfw filter; keep it tame. |
+| S3 gym desk | 7.4–10.0 | "…personal trainer I was paying for" | User redirected: Mike seen FROM BEHIND at the desk paying (cash + payment slip) while the S2 squat is visible in the background. Options: A `26e1ca55-c48c-48b3-a778-9d14a1dc2246` (3/4 back, he watches them, logo cropped), B `e20b3475-4a06-40a2-8870-0af0fe8fad70` (full back, logo intact) → A PICKED, animated: `H5_Gym/SL_A41462OLD_H5_S3_FrontDesk_GeminiOmni_v1.mp4`. (Older face-on S3 options 6cc860d6/4b60e392 dropped.) |
 | S4 hallway | 10.0–16.6 | "Her parting words…" | REUSE shared S4 above |
 Original frames (Higgsfield media): S1 `a1e8ae8f-5659-49c7-b117-bc0e9cd9a4d4`, S3 `b02058fe-6112-4779-b13d-305f942dcd46`, S4 `f015cef3-3dfd-484e-8de2-1507c3298c19`.
 User feedback: first H5 swaps were too flat — make frames **more intense** (moodier light, stronger emotion).
@@ -68,3 +68,6 @@ User feedback: first H5 swaps were too flat — make frames **more intense** (mo
 - Deliver with SendUserFile; zips must be < 30 MB (split or re-encode crf 22).
 - Storyboard: scratchpad `build_sb.py` → `sb/index.html` (artifact, H1→H5 order). Rebuild + republish after changes.
 - User writes Taglish; reply in Taglish.
+
+## H5 rough cut recipe (v1)
+S1 0–3.72 · S2 0.1–3.82 · S3 0.6–3.2 · S4 = H2 S4 full 6.04 s (its own audio, Rachel's line). Audio: VID1 original 0–10.9 (lead VO, fade at 10.75) + clip audio bed 0.25 + S4 audio at 10.04 s.
