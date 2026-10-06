@@ -24,7 +24,7 @@ cut and timing stay the same. Body starts at "Six months later…" (VID1 0:16.64
 | H2 Clubhouse Swing | Claude | S1–S4 done, rough cut v1 (`H2_Clubhouse/`) |
 | H3 Ballroom Dance | **Codex** (do NOT generate) | in Higgsfield, by Codex |
 | H4 Landscaper/Patio | Claude | S1–S4 + 6 extra angles, fast-pace rough cut v2 (`H4_Patio/`, `H4_Patio/Angles/`) |
-| H5 Gym (winning hook) | Claude | S1–S3 new + S4 reused (H2), rough cut v1 (`H5_Gym/SL_A41462OLD_H5_Gym_RoughCut_v1.mp4`, 16.1 s) |
+| H5 Gym (winning hook) | Claude | S1–S3 new + S4 reused (H2), rough cut v2 (`H5_Gym/SL_A41462OLD_H5_Gym_RoughCut_v2.mp4`, 16.1 s; VO wavs in `H5_Gym/VO/`) |
 
 ## REUSE before you generate
 **S4 Hallway (Rachel's parting words) is already made — it is the shared S4 for every hook. Do not regenerate it.**
@@ -39,7 +39,7 @@ S3A rear driveway, S3B inside cab) in `H4_Patio/Angles/`.
 ## H5 Gym (winning hook) — VID1 0–16.64 s
 | Shot | Time | VO (original audio kept) | Plan |
 |---|---|---|---|
-| S1 recliner | 0–3.7 | "She used to say she went to the gym to do squats" | v2 "intense" keyframe S1-A (job `a9fe5b2a-5228-4d39-a5e1-e8b1385ed180`) APPROVED → `H5_Gym/SL_A41462OLD_H5_S1_Recliner_GeminiOmni_v1.mp4` |
+| S1 recliner | 0–3.7 | "She used to say she went to the gym to do squats" | v2 "intense" keyframe S1-A (job `a9fe5b2a-5228-4d39-a5e1-e8b1385ed180`) APPROVED → v1 had the door warping as she walked out; use retake `H5_Gym/SL_A41462OLD_H5_S1_Recliner_GeminiOmni_v2a.mp4` (she stays in the doorway, door/frame locked in Rules) |
 | S2 squats | 3.72–7.44 | "…just not with weights" | User asked for a new angle + more realistic: new keyframe S2-A wide (secret-watcher view behind dumbbell rack), wardrobe fixed to match S1 (black tank + black shorts w/ white trim) → job `6a839ec7-82ce-466c-a7ac-73e320acd39a`, APPROVED, animated: `H5_Gym/SL_A41462OLD_H5_S2_GymSquat_GeminiOmni_v1.mp4`. Original footage kept as fallback: `H5_Gym/SL_A41462OLD_H5_S2_Squats_OriginalVID1.mp4`. Explicit squat-over-trainer wording trips the nsfw filter; keep it tame. |
 | S3 gym desk | 7.4–10.0 | "…personal trainer I was paying for" | User redirected: Mike seen FROM BEHIND at the desk paying (cash + payment slip) while the S2 squat is visible in the background. Options: A `26e1ca55-c48c-48b3-a778-9d14a1dc2246` (3/4 back, he watches them, logo cropped), B `e20b3475-4a06-40a2-8870-0af0fe8fad70` (full back, logo intact) → A PICKED, animated: `H5_Gym/SL_A41462OLD_H5_S3_FrontDesk_GeminiOmni_v1.mp4`. (Older face-on S3 options 6cc860d6/4b60e392 dropped.) |
 | S4 hallway | 10.0–16.6 | "Her parting words…" | REUSE shared S4 above |
@@ -56,7 +56,8 @@ User feedback: first H5 swaps were too flat — make frames **more intense** (mo
    (or "Dialogue: none."); (3) Rules incl. "One continuous take, no jump cuts, no change of camera angle",
    faces/wardrobe locked, audio, no captions. Lock the prompt, swap only dialogue. CAPS for stress words.
 5. Keep wardrobe continuity across shots of the same scene/hook (e.g. Rachel's S1 outfit = S2 outfit).
-6. Check every clip for jump cuts (`ffmpeg select='gt(scene,0.2)'`); retake if any.
+6. When a character exits through a door, Omni tends to warp the door/frame: keep them in place or add a Rule that the door, frame and walls stay still.
+7. Check every clip for jump cuts (`ffmpeg select='gt(scene,0.2)'`); retake if any.
 6. Shots with a lead must keep his look consistent with the sheet; no one looks at camera unless the original does;
    logical staging (e.g. a driver in a moving truck).
 7. Fast-pace style is welcome: extra angles per shot, cut 1.5–2.5 s each.
