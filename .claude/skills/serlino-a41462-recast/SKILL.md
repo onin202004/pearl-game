@@ -40,7 +40,7 @@ S3A rear driveway, S3B inside cab) in `H4_Patio/Angles/`.
 | Shot | Time | VO (original audio kept) | Plan |
 |---|---|---|---|
 | S1 recliner | 0–3.7 | "She used to say she went to the gym to do squats" | v2 "intense" keyframe S1-A (job `a9fe5b2a-5228-4d39-a5e1-e8b1385ed180`) APPROVED → Omni 4 s |
-| S2 squats | 3.7–7.4 | "…just not with weights" | original footage (no lead) |
+| S2 squats | 3.72–7.44 | "…just not with weights" | original footage (no lead), extracted: `H5_Gym/SL_A41462OLD_H5_S2_Squats_OriginalVID1.mp4` |
 | S3 gym desk | 7.4–10.0 | "…personal trainer I was paying for" | v2 options: A `6cc860d6-…` (logo cropped), B `4b60e392-daab-455d-8d4a-4a34710ca20f` (recommended) — awaiting approval |
 | S4 hallway | 10.0–16.6 | "Her parting words…" | REUSE shared S4 above |
 Original frames (Higgsfield media): S1 `a1e8ae8f-5659-49c7-b117-bc0e9cd9a4d4`, S3 `b02058fe-6112-4779-b13d-305f942dcd46`, S4 `f015cef3-3dfd-484e-8de2-1507c3298c19`.
