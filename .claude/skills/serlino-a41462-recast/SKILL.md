@@ -40,7 +40,7 @@ S3A rear driveway, S3B inside cab) in `H4_Patio/Angles/`.
 | Shot | Time | VO (original audio kept) | Plan |
 |---|---|---|---|
 | S1 recliner | 0–3.7 | "She used to say she went to the gym to do squats" | v2 "intense" keyframe S1-A (job `a9fe5b2a-5228-4d39-a5e1-e8b1385ed180`) APPROVED → Omni 4 s |
-| S2 squats | 3.72–7.44 | "…just not with weights" | original footage (no lead), extracted: `H5_Gym/SL_A41462OLD_H5_S2_Squats_OriginalVID1.mp4` |
+| S2 squats | 3.72–7.44 | "…just not with weights" | User asked for a new angle + more realistic: new keyframe S2-A wide (secret-watcher view behind dumbbell rack), wardrobe fixed to match S1 (black tank + black shorts w/ white trim) → job `6a839ec7-82ce-466c-a7ac-73e320acd39a`, awaiting final OK to animate. Original footage kept as fallback: `H5_Gym/SL_A41462OLD_H5_S2_Squats_OriginalVID1.mp4`. Explicit squat-over-trainer wording trips the nsfw filter; keep it tame. |
 | S3 gym desk | 7.4–10.0 | "…personal trainer I was paying for" | v2 options: A `6cc860d6-…` (logo cropped), B `4b60e392-daab-455d-8d4a-4a34710ca20f` (recommended) — awaiting approval |
 | S4 hallway | 10.0–16.6 | "Her parting words…" | REUSE shared S4 above |
 Original frames (Higgsfield media): S1 `a1e8ae8f-5659-49c7-b117-bc0e9cd9a4d4`, S3 `b02058fe-6112-4779-b13d-305f942dcd46`, S4 `f015cef3-3dfd-484e-8de2-1507c3298c19`.
@@ -55,7 +55,8 @@ User feedback: first H5 swaps were too flat — make frames **more intense** (mo
 4. Kristian Jennings 3-part Omni prompt: (1) scene + explicit camera ("Static, locked-off shot"); (2) dialogue in quotes
    (or "Dialogue: none."); (3) Rules incl. "One continuous take, no jump cuts, no change of camera angle",
    faces/wardrobe locked, audio, no captions. Lock the prompt, swap only dialogue. CAPS for stress words.
-5. Check every clip for jump cuts (`ffmpeg select='gt(scene,0.2)'`); retake if any.
+5. Keep wardrobe continuity across shots of the same scene/hook (e.g. Rachel's S1 outfit = S2 outfit).
+6. Check every clip for jump cuts (`ffmpeg select='gt(scene,0.2)'`); retake if any.
 6. Shots with a lead must keep his look consistent with the sheet; no one looks at camera unless the original does;
    logical staging (e.g. a driver in a moving truck).
 7. Fast-pace style is welcome: extra angles per shot, cut 1.5–2.5 s each.
