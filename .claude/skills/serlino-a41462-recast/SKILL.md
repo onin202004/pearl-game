@@ -5,6 +5,9 @@ description: Serlino Lab A4.1462 "Italian Gentlemen" older-lead recast. Load whe
 
 # Serlino Lab · A4.1462 Older-Lead Recast
 
+> **STATUS: PARKED / brief complete (2026-10-14).** H1, H2, H4, H5 delivered (H3 by Codex). Body recast was not started.
+> Don't generate more for this brief unless the user reopens it. General learnings: `.claude/skills/ai-ugc-recast-learnings/SKILL.md`.
+
 Goal: recast the winning ad A4.1462 (men's retinol + Italian olive oil anti-wrinkle cream, 60-day guarantee)
 with an older male lead to test if an older demo converts higher. **Only the lead changes.** VO, scenes,
 cut and timing stay the same. Body starts at "Six months later…" (VID1 0:16.64); everything before is a hook.
