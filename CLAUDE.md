@@ -7,3 +7,5 @@ Production assets for Serlino Lab AI ad work.
   every generation, Gemini Omni only, wardrobe continuity, door-warp fix, VO delivery, etc.).
 - **A4.1462 older-lead recast** (`A41462_OlderRecast/`) is PARKED, with the brief complete. Its asset registry is
   `.claude/skills/serlino-a41462-recast/SKILL.md`. Reuse those assets; don't regenerate.
+- Notion copy of the learnings (Category: AI Video Production) is in Tools & Resources › CLAUDE - Skills:
+  https://app.notion.com/p/3f927e31c1d28158bd47cb66e8f1673e. Keep the repo skill and the Notion skill in sync when adding new learnings.
