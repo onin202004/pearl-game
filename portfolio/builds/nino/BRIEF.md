@@ -14,6 +14,15 @@ feeling curve and signature move are authored decisions, labelled as such.
 | Phone / WhatsApp | "09989586332" (+63 998 958 6332). The old phone icon pointed at a different number; that one is dropped. |
 | Assets | Everything already on the Canva site: 20 video ads and testimonials, an alpha cutout portrait, a studio portrait, a calendar booking link, an email. |
 
+## Revision 2: purely AI
+
+"alisin n naten sa main un freebird kasi UGC tlaga to gawin naten purely AI videos"
+and "my mga AI videos pa rin ako check mo din un portfolio ko dito sa frame".
+The page now shows AI-made ads only, sourced from his Frame.io share: AI UGC,
+AI product ads, a hook-variation set, AI avatars and podcasts, Pixar-style and
+medical animation. The client testimonials stay as trust (they are about him,
+not samples). "One headlamp, four stories" became "One ad, three hooks".
+
 ## The eight topics
 
 1. **Vibe** (authored): punchy, confident, editor's-eye. References: a Premiere
