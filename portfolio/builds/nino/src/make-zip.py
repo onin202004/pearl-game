@@ -33,12 +33,15 @@ for sid, label, body in sections:
     folder = '%02d-%s' % (n, re.sub(r'[^A-Za-z0-9]+', '-', label).strip('-'))
     seen = set()
     for path, title in clips:
+        sub = folder
+        if sid == 'clients' and not os.path.basename(path).startswith('t-'):
+            sub = '%02d-More-brands' % (n + 1)
         name = re.sub(r'[^A-Za-z0-9 .&-]+', '', title.replace(',', ' -')).strip()
         name = re.sub(r'\s+', ' ', name)
         while name in seen:
             name += ' (2)'
         seen.add(name)
-        videos.append((path, 'videos/%s/%s.mp4' % (folder, name)))
+        videos.append((path, 'videos/%s/%s.mp4' % (sub, name)))
 
 readme = """NINO PAGAYANAN PORTFOLIO
 ========================
