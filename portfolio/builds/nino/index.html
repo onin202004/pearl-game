@@ -164,10 +164,16 @@
   .reel--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .reel--2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .reel--6 { grid-template-columns: repeat(6, minmax(0,1fr)); }
+  .reel--5 { grid-template-columns: repeat(5, minmax(0,1fr)); }
+  .hooktabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 clamp(1.5rem, 3vw, 2.25rem); }
+  .hooktabs button { font: inherit; font-family: var(--sc-font-display); font-weight: 800; font-stretch: 110%; text-transform: uppercase; letter-spacing: 0.06em; font-size: var(--sc-t-sm); padding: 0.7em 1.1em; border-radius: var(--radius); border: 2px solid rgba(246,242,232,0.22); background: transparent; color: var(--sc-ink); cursor: pointer; transition: background-color 160ms var(--sc-ease-out), color 160ms var(--sc-ease-out), border-color 160ms var(--sc-ease-out); }
+  .hooktabs button[aria-selected="true"] { background: var(--sc-accent); color: #0F0E0B; border-color: var(--sc-accent); }
+  @media (hover: hover) and (pointer: fine) { .hooktabs button[aria-selected="false"]:hover { border-color: var(--sc-accent); } }
+
   .reel--8 { grid-template-columns: repeat(8, minmax(0,1fr)); gap: clamp(0.5rem, 1vw, 0.9rem); }
   .reel--8 .clip figcaption b { font-size: var(--sc-t-sm); }
   .reel--8 .clip figcaption span { font-size: var(--sc-t-xs); }
-  @media (min-width: 761px) and (max-width: 1100px) { .reel--8 { grid-template-columns: repeat(4, minmax(0,1fr)); } .reel--6 { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+  @media (min-width: 761px) and (max-width: 1100px) { .reel--8 { grid-template-columns: repeat(4, minmax(0,1fr)); } .reel--6 { grid-template-columns: repeat(3, minmax(0,1fr)); } .reel--5 { grid-template-columns: repeat(5, minmax(0,1fr)); } }
   .clip { margin: 0; }
   .clip__btn {
     position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer;
@@ -197,14 +203,14 @@
 
   /* Phones swipe sideways instead of stacking four tall clips: each cut stays short. */
   @media (max-width: 760px) {
-    .reel--4, .reel--3, .reel--6, .reel--8 {
+    .reel--4, .reel--3, .reel--5, .reel--6, .reel--8 {
       grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%;
       overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
       margin-inline: calc(var(--sc-gutter) * -1); padding-inline: var(--sc-gutter); scroll-padding-inline: var(--sc-gutter);
       scrollbar-width: none; padding-bottom: 4px;
     }
-    .reel--4::-webkit-scrollbar, .reel--3::-webkit-scrollbar, .reel--6::-webkit-scrollbar, .reel--8::-webkit-scrollbar { display: none; }
-    .reel--4 > *, .reel--3 > *, .reel--6 > *, .reel--8 > * { scroll-snap-align: start; }
+    .reel--4::-webkit-scrollbar, .reel--3::-webkit-scrollbar, .reel--5::-webkit-scrollbar, .reel--6::-webkit-scrollbar, .reel--8::-webkit-scrollbar { display: none; }
+    .reel--4 > *, .reel--3 > *, .reel--5 > *, .reel--6 > *, .reel--8 > * { scroll-snap-align: start; }
     .reel--8 { grid-auto-columns: 38%; }
     .reel--3.clipf { grid-auto-columns: 78%; }
     .reel--2 { grid-template-columns: 1fr; }
@@ -366,7 +372,7 @@
         <div class="hero__slab"></div>
         <div class="hero__phone"><video data-src="assets/v/showreel-p.mp4" poster="assets/v/showreel.webp" muted loop playsinline preload="none"></video></div>
         <img class="hero__cut" src="assets/img/nino-cutout.webp" width="760" height="1140" alt="" fetchpriority="high">
-        <div class="hero__chip">100% AI-made<span>UGC, product, animation</span></div>
+        <div class="hero__chip">100% AI-made<span>UGC, podcast, story, animation</span></div>
       </div>
     </div>
   </section>
@@ -391,11 +397,13 @@
         <h2 class="disp disp--lg">AI UGC ads</h2>
         <p class="body">Real-feeling creator ads for DTC brands, made entirely with AI. No shoots, no creator fees. Tap any ad to watch it with sound.</p>
       </div>
-      <div class="reel reel--4" data-sc-in data-sc-stagger="60">
+      <div class="reel reel--6" data-sc-in data-sc-stagger="60">
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/ugc-bloomchic.mp4" data-title="BloomChic, Fashion · street interview"><video data-src="assets/v/ugc-bloomchic-p.mp4" poster="assets/v/ugc-bloomchic.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>BloomChic</b><span>Fashion · street interview</span></figcaption></figure>
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/ugc-tryrenewa.mp4" data-title="TryRenewa, Skincare · testimonial"><video data-src="assets/v/ugc-tryrenewa-p.mp4" poster="assets/v/ugc-tryrenewa.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>TryRenewa</b><span>Skincare · testimonial</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/ugc-gentlepaws.mp4" data-title="Gentle Paws, Pet wellness · explainer"><video data-src="assets/v/ugc-gentlepaws-p.mp4" poster="assets/v/ugc-gentlepaws.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Gentle Paws</b><span>Pet wellness · explainer</span></figcaption></figure>
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/ugc-bindright.mp4" data-title="Bindright, Insurance · street interview"><video data-src="assets/v/ugc-bindright-p.mp4" poster="assets/v/ugc-bindright.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Bindright</b><span>Insurance · street interview</span></figcaption></figure>
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/ugc-fitme.mp4" data-title="FitMe, Fitness app · founder story"><video data-src="assets/v/ugc-fitme-p.mp4" poster="assets/v/ugc-fitme.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>FitMe</b><span>Fitness app · founder story</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/exp-avatar.mp4" data-title="AI avatar, Talking-head ad"><video data-src="assets/v/exp-avatar-p.mp4" poster="assets/v/exp-avatar.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>AI avatar</b><span>Talking-head ad</span></figcaption></figure>
       </div>
       <p class="swipe-hint">Swipe for more</p>
     </div>
@@ -418,48 +426,81 @@
     </div>
   </section>
 
-  <!-- 5 PROOF: HOOK TESTING -->
+  <!-- 5 PROOF: AI PODCAST -->
+  <section class="cut g-yellow work" id="podcast" data-clip="Podcast">
+    <div class="wrap">
+      <div class="work__head" data-sc-in>
+        <h2 class="disp disp--lg">AI podcast ads</h2>
+        <p class="body">Fake-podcast formats that sell like a real conversation. Built for coaches, experts and health brands.</p>
+      </div>
+      <div class="reel reel--4" data-sc-in data-sc-stagger="60">
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/exp-podcast.mp4" data-title="Privacy service, Podcast format"><video data-src="assets/v/exp-podcast-p.mp4" poster="assets/v/exp-podcast.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Privacy service</b><span>Podcast format</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/exp-podcast2.mp4" data-title="Swelling, Health brand · AI podcast"><video data-src="assets/v/exp-podcast2-p.mp4" poster="assets/v/exp-podcast2.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Swelling</b><span>Health brand · AI podcast</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/pod-circulation.mp4" data-title="Circulation, Health brand · AI podcast"><video data-src="assets/v/pod-circulation-p.mp4" poster="assets/v/pod-circulation.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Circulation</b><span>Health brand · AI podcast</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/pod-advertorial.mp4" data-title="Menopause, Supplement · AI podcast"><video data-src="assets/v/pod-advertorial-p.mp4" poster="assets/v/pod-advertorial.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Menopause</b><span>Supplement · AI podcast</span></figcaption></figure>
+      </div>
+      <p class="swipe-hint">Swipe for more</p>
+    </div>
+  </section>
+
+  <!-- 6 PROOF: HOOK TESTING, three styles -->
   <section class="cut g-coal work visus" id="hooks" data-clip="Hooks">
     <div class="wrap">
       <div class="work__head" data-sc-in>
         <h2 class="disp disp--lg visus__title">One ad. <em>Three hooks.</em></h2>
-        <p class="body">Every ad ships with hook variations to test. Same body, a different first three seconds, so you find the winner fast. Shapewear ad for Oh-Shape.</p>
+        <p class="body">Every ad ships with hook variations to test. Same body, a different first three seconds, so you find the winner fast. Pick a style.</p>
       </div>
-      <div class="reel reel--3" data-sc-in data-sc-stagger="60">
+      <div class="hooktabs" role="tablist" aria-label="Ad style" data-sc-in>
+        <button type="button" role="tab" id="tab-ugc" aria-controls="set-ugc" aria-selected="true">AI UGC</button>
+        <button type="button" role="tab" id="tab-hyper" aria-controls="set-hyper" aria-selected="false">Hyper-realistic</button>
+        <button type="button" role="tab" id="tab-clay" aria-controls="set-clay" aria-selected="false">Claymation</button>
+      </div>
+      <div class="reel reel--3" id="set-ugc" role="tabpanel" aria-labelledby="tab-ugc">
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/hook-1.mp4" data-title="Hook 1, Oh-Shape · shapewear"><video data-src="assets/v/hook-1-p.mp4" poster="assets/v/hook-1.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 1</b><span>Oh-Shape · shapewear</span></figcaption></figure>
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/hook-2.mp4" data-title="Hook 2, Oh-Shape · shapewear"><video data-src="assets/v/hook-2-p.mp4" poster="assets/v/hook-2.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 2</b><span>Oh-Shape · shapewear</span></figcaption></figure>
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/hook-3.mp4" data-title="Hook 3, Oh-Shape · shapewear"><video data-src="assets/v/hook-3-p.mp4" poster="assets/v/hook-3.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 3</b><span>Oh-Shape · shapewear</span></figcaption></figure>
       </div>
+      <div class="reel reel--3" id="set-hyper" role="tabpanel" aria-labelledby="tab-hyper" hidden>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/hyper-1.mp4" data-title="Hook 1, The Uzzle · hyper-realistic"><video data-src="assets/v/hyper-1-p.mp4" poster="assets/v/hyper-1.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 1</b><span>The Uzzle · hyper-realistic</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/hyper-2.mp4" data-title="Hook 2, The Uzzle · hyper-realistic"><video data-src="assets/v/hyper-2-p.mp4" poster="assets/v/hyper-2.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 2</b><span>The Uzzle · hyper-realistic</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/hyper-3.mp4" data-title="Hook 3, The Uzzle · hyper-realistic"><video data-src="assets/v/hyper-3-p.mp4" poster="assets/v/hyper-3.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 3</b><span>The Uzzle · hyper-realistic</span></figcaption></figure>
+      </div>
+      <div class="reel reel--3" id="set-clay" role="tabpanel" aria-labelledby="tab-clay" hidden>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/clay-1.mp4" data-title="Hook 1, The Uzzle · claymation"><video data-src="assets/v/clay-1-p.mp4" poster="assets/v/clay-1.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 1</b><span>The Uzzle · claymation</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/clay-2.mp4" data-title="Hook 2, The Uzzle · claymation"><video data-src="assets/v/clay-2-p.mp4" poster="assets/v/clay-2.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 2</b><span>The Uzzle · claymation</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/clay-3.mp4" data-title="Hook 3, The Uzzle · claymation"><video data-src="assets/v/clay-3-p.mp4" poster="assets/v/clay-3.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Hook 3</b><span>The Uzzle · claymation</span></figcaption></figure>
+      </div>
       <p class="swipe-hint">Swipe for more</p>
     </div>
   </section>
 
-  <!-- 6 PROOF: COACHES & EXPERTS -->
-  <section class="cut g-yellow work" id="coaches" data-clip="Coaches">
+  <!-- 7 PROOF: STORYTELLING -->
+  <section class="cut g-dark work" id="story" data-clip="Story">
     <div class="wrap">
       <div class="work__head" data-sc-in>
-        <h2 class="disp disp--lg">Coaches and experts</h2>
-        <p class="body">AI avatars and AI podcast formats that sell a program or a product without booking a studio.</p>
+        <h2 class="disp disp--lg">Storytelling ads</h2>
+        <p class="body">Narrative AI ads that make a local service feel personal. A full roofing campaign, five stories.</p>
       </div>
-      <div class="reel reel--3" data-sc-in data-sc-stagger="60">
-        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/exp-avatar.mp4" data-title="AI avatar, Talking-head ad"><video data-src="assets/v/exp-avatar-p.mp4" poster="assets/v/exp-avatar.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>AI avatar</b><span>Talking-head ad</span></figcaption></figure>
-        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/exp-podcast.mp4" data-title="Podcast format, AI ad · privacy service"><video data-src="assets/v/exp-podcast-p.mp4" poster="assets/v/exp-podcast.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Podcast format</b><span>AI ad · privacy service</span></figcaption></figure>
-        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/exp-podcast2.mp4" data-title="AI podcast, Health brand · long-form"><video data-src="assets/v/exp-podcast2-p.mp4" poster="assets/v/exp-podcast2.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>AI podcast</b><span>Health brand · long-form</span></figcaption></figure>
+      <div class="reel reel--5" data-sc-in data-sc-stagger="60">
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/story-roofers.mp4" data-title="Two minutes, Roofing · storytelling"><video data-src="assets/v/story-roofers-p.mp4" poster="assets/v/story-roofers.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Two minutes</b><span>Roofing · storytelling</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/story-roofers2.mp4" data-title="Apex Roofing, Roofing · storytelling"><video data-src="assets/v/story-roofers2-p.mp4" poster="assets/v/story-roofers2.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Apex Roofing</b><span>Roofing · storytelling</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/story-briefu.mp4" data-title="The handshake, Roofing · storytelling"><video data-src="assets/v/story-briefu-p.mp4" poster="assets/v/story-briefu.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>The handshake</b><span>Roofing · storytelling</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/story-brieft.mp4" data-title="Night call, Roofing · storytelling"><video data-src="assets/v/story-brieft-p.mp4" poster="assets/v/story-brieft.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Night call</b><span>Roofing · storytelling</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/story-3010.mp4" data-title="The water speech, Roofing · storytelling"><video data-src="assets/v/story-3010-p.mp4" poster="assets/v/story-3010.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>The water speech</b><span>Roofing · storytelling</span></figcaption></figure>
       </div>
       <p class="swipe-hint">Swipe for more</p>
     </div>
   </section>
 
-  <!-- 7 PROOF: ANIMATED -->
-  <section class="cut g-dark work" id="animated" data-clip="Animated">
+  <!-- 8 PROOF: ANIMATED -->
+  <section class="cut g-yellow work" id="animated" data-clip="Animated">
     <div class="wrap">
       <div class="work__head" data-sc-in>
         <h2 class="disp disp--lg">Animated AI ads</h2>
         <p class="body">Pixar-style characters and medical animation that explain a product in a way stock footage never could.</p>
       </div>
-      <div class="reel reel--4" data-sc-in data-sc-stagger="60">
+      <div class="reel reel--3" data-sc-in data-sc-stagger="60">
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/anim-sum63.mp4" data-title="Sum63, Pixar-style story"><video data-src="assets/v/anim-sum63-p.mp4" poster="assets/v/anim-sum63.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Sum63</b><span>Pixar-style story</span></figcaption></figure>
-        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/anim-uzzle.mp4" data-title="The Uzzle, Puzzle game · Pixar-style"><video data-src="assets/v/anim-uzzle-p.mp4" poster="assets/v/anim-uzzle.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>The Uzzle</b><span>Puzzle game · Pixar-style</span></figcaption></figure>
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/anim-grandma.mp4" data-title="Italian remedy, Health · animated story"><video data-src="assets/v/anim-grandma-p.mp4" poster="assets/v/anim-grandma.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Italian remedy</b><span>Health · animated story</span></figcaption></figure>
         <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/anim-vein.mp4" data-title="Circulation, Health · medical animation"><video data-src="assets/v/anim-vein-p.mp4" poster="assets/v/anim-vein.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Circulation</b><span>Health · medical animation</span></figcaption></figure>
       </div>
@@ -590,6 +631,21 @@ ScrollCraft.mount(document.body);
     });
   }, { rootMargin: '200px 0px', threshold: 0.15 });
   vids.forEach(function (v) { io.observe(v); });
+
+
+  /* Hook tabs: one style at a time. */
+  var tabs = [].slice.call(document.querySelectorAll('.hooktabs [role="tab"]'));
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (o) {
+        var on = o === t; o.setAttribute('aria-selected', on ? 'true' : 'false');
+        var panel = document.getElementById(o.getAttribute('aria-controls'));
+        panel.hidden = !on;
+        [].slice.call(panel.querySelectorAll('[data-sc-stagger] > *, figure')).forEach(function (f) { f.classList.add('sc-in'); });
+        panel.querySelectorAll('video').forEach(function (v) { if (!on) v.pause(); else { if (!v.src) { v.src = v.dataset.src; } if (!reduce) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } } });
+      });
+    });
+  });
 
   /* Lightbox: full ad with sound, loaded on demand. */
   var lb = document.getElementById('lb'), lbv = document.getElementById('lbv'), lbt = document.getElementById('lbt');

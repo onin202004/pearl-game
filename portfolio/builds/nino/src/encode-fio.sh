@@ -4,6 +4,8 @@ set -e
 B=/home/user/pearl-game/portfolio/builds/nino
 cd $B/src/fio
 for src in *.mp4; do
+  [ -f $B/assets/v/${src%.mp4}.mp4 ] && continue
+  case $src in *-src.mp4) continue;; esac
   name=${src%.mp4}; ss=0.2
   w=$(ffprobe -v error -select_streams v:0 -show_entries stream=width -of csv=p=0 $src); h=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of csv=p=0 $src)
   if [ $w -gt $h ]; then pv="scale=640:-2"; fv="scale=960:-2"; else pv="scale=360:-2"; fv="scale=540:-2"; fi
