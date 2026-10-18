@@ -28,9 +28,7 @@ changes only grammar and world will fail it.
 
 | Build | Grammar | Nav treatment | Hero device | Act-sequence shape | Close pattern | Signature move | World | Port |
 |---|---|---|---|---|---|---|---|---|
-
-*(empty: your first build has nothing to clear, so build whatever the interview
-points at. From the second onwards, this table is the constraint.)*
+| nino (ninopagayanan.com) | Rhythmic cutlist | Loud full-width black bar, yellow wordmark + Book a call at equal weight | Four-plane static hero: yellow slab, phone playing his own ad, alpha cutout, rotated chip | 10 short unpinned flow cuts (~12.5vh desktop), hard-cut grounds yellow/black/coal/bone, no drift | Yellow ground, giant headline, one black button, contact lines as running facts | Edit timeline chrome: scroll is the playhead, timecode to 00:00:30:00, clips fill as cuts pass, rises into a review panel ("you just watched a 30-second ad") then stamps Exported | Photographic, client footage only | 4500 |
 
 ---
 
@@ -41,7 +39,8 @@ reusing: a grammar, a nav treatment, a close pattern, a signature move, an
 act-count-and-length band. The shared columns are what the next build inherits
 as a constraint, so writing them down is the whole point.
 
-Nothing is taken yet.
+- Rhythmic cutlist with the peak held in a bottom timeline chrome (nino).
+- Signature: NLE-style edit timeline as playhead + nav + peak panel (nino).
 
 ---
 
