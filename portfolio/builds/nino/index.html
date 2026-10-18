@@ -163,6 +163,11 @@
   .reel--4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
   .reel--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .reel--2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .reel--6 { grid-template-columns: repeat(6, minmax(0,1fr)); }
+  .reel--8 { grid-template-columns: repeat(8, minmax(0,1fr)); gap: clamp(0.5rem, 1vw, 0.9rem); }
+  .reel--8 .clip figcaption b { font-size: var(--sc-t-sm); }
+  .reel--8 .clip figcaption span { font-size: var(--sc-t-xs); }
+  @media (min-width: 761px) and (max-width: 1100px) { .reel--8 { grid-template-columns: repeat(4, minmax(0,1fr)); } .reel--6 { grid-template-columns: repeat(3, minmax(0,1fr)); } }
   .clip { margin: 0; }
   .clip__btn {
     position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer;
@@ -192,14 +197,15 @@
 
   /* Phones swipe sideways instead of stacking four tall clips: each cut stays short. */
   @media (max-width: 760px) {
-    .reel--4, .reel--3 {
+    .reel--4, .reel--3, .reel--6, .reel--8 {
       grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%;
       overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
       margin-inline: calc(var(--sc-gutter) * -1); padding-inline: var(--sc-gutter); scroll-padding-inline: var(--sc-gutter);
       scrollbar-width: none; padding-bottom: 4px;
     }
-    .reel--4::-webkit-scrollbar, .reel--3::-webkit-scrollbar { display: none; }
-    .reel--4 > *, .reel--3 > * { scroll-snap-align: start; }
+    .reel--4::-webkit-scrollbar, .reel--3::-webkit-scrollbar, .reel--6::-webkit-scrollbar, .reel--8::-webkit-scrollbar { display: none; }
+    .reel--4 > *, .reel--3 > *, .reel--6 > *, .reel--8 > * { scroll-snap-align: start; }
+    .reel--8 { grid-auto-columns: 38%; }
     .reel--3.clipf { grid-auto-columns: 78%; }
     .reel--2 { grid-template-columns: 1fr; }
     .swipe-hint { display: block; }
@@ -468,9 +474,30 @@
         <h2 class="disp disp--lg">Clients, on camera</h2>
         <p class="body">Don't take my word for it. Take theirs.</p>
       </div>
-      <div class="reel reel--2" data-sc-in data-sc-stagger="80">
-        <figure class="clip clip--w"><button class="clip__btn" data-full="assets/v/t-kayla.mp4" data-title="Kayla Hunter, real estate agent"><video data-src="assets/v/t-kayla-p.mp4" poster="assets/v/t-kayla.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Kayla Hunter</b><span>Real estate agent</span></figcaption></figure>
-        <figure class="clip clip--w"><button class="clip__btn" data-full="assets/v/t-kristin.mp4" data-title="Kristin Wilkinson, real estate agent"><video data-src="assets/v/t-kristin-p.mp4" poster="assets/v/t-kristin.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Kristin Wilkinson</b><span>Real estate agent</span></figcaption></figure>
+      <div class="reel reel--6" data-sc-in data-sc-stagger="60">
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/t-nick.mp4" data-title="Nick Rogers, CEO, Launch Social"><video data-src="assets/v/t-nick-p.mp4" poster="assets/v/t-nick.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Nick Rogers</b><span>CEO, Launch Social</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/t-anthony.mp4" data-title="Anthony, Steady Ecom"><video data-src="assets/v/t-anthony-p.mp4" poster="assets/v/t-anthony.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Anthony</b><span>Steady Ecom</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/t-peter.mp4" data-title="Peter Heald, CEO, SideKick Media"><video data-src="assets/v/t-peter-p.mp4" poster="assets/v/t-peter.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Peter Heald</b><span>CEO, SideKick Media</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/t-jose.mp4" data-title="Jose Viana, Christian YouTuber"><video data-src="assets/v/t-jose-p.mp4" poster="assets/v/t-jose.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Jose Viana</b><span>Christian YouTuber</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/t-kayla.mp4" data-title="Kayla Hunter, Real estate agent"><video data-src="assets/v/t-kayla-p.mp4" poster="assets/v/t-kayla.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Kayla Hunter</b><span>Real estate agent</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/t-kristin.mp4" data-title="Kristin Wilkinson, Real estate agent"><video data-src="assets/v/t-kristin-p.mp4" poster="assets/v/t-kristin.webp" muted loop playsinline preload="none"></video><span class="clip__play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span></button><figcaption><b>Kristin Wilkinson</b><span>Real estate agent</span></figcaption></figure>
+      </div>
+      <p class="swipe-hint">Swipe for more</p>
+      <div class="trust__more" data-sc-in>
+        <div class="work__head">
+          <h3 class="disp disp--md">More brands I've edited for</h3>
+          <p class="body">UGC, product and founder-led ads I've edited for DTC brands and coaches.</p>
+        </div>
+        <div class="reel reel--8" data-sc-in data-sc-stagger="40">
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/freebird.mp4" data-title="Freebird, Head shaver"><video data-src="assets/v/freebird-p.mp4" poster="assets/v/freebird.webp" muted loop playsinline preload="none"></video></button><figcaption><b>Freebird</b><span>Head shaver</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/spudsy.mp4" data-title="Spudsy, Snacks"><video data-src="assets/v/spudsy-p.mp4" poster="assets/v/spudsy.webp" muted loop playsinline preload="none"></video></button><figcaption><b>Spudsy</b><span>Snacks</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/kamado.mp4" data-title="Kamado Range, Cooking stove"><video data-src="assets/v/kamado-p.mp4" poster="assets/v/kamado.webp" muted loop playsinline preload="none"></video></button><figcaption><b>Kamado Range</b><span>Cooking stove</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/product.mp4" data-title="FlexSeries, Grooming"><video data-src="assets/v/product-p.mp4" poster="assets/v/product.webp" muted loop playsinline preload="none"></video></button><figcaption><b>FlexSeries</b><span>Grooming</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/visus-electrician.mp4" data-title="Visus 180, Headlamp"><video data-src="assets/v/visus-electrician-p.mp4" poster="assets/v/visus-electrician.webp" muted loop playsinline preload="none"></video></button><figcaption><b>Visus 180</b><span>Headlamp</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/trainers.mp4" data-title="Personal trainers, Coaching"><video data-src="assets/v/trainers-p.mp4" poster="assets/v/trainers.webp" muted loop playsinline preload="none"></video></button><figcaption><b>Personal trainers</b><span>Coaching</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/agency.mp4" data-title="Medspa owners, Coaching"><video data-src="assets/v/agency-p.mp4" poster="assets/v/agency.webp" muted loop playsinline preload="none"></video></button><figcaption><b>Medspa owners</b><span>Coaching</span></figcaption></figure>
+        <figure class="clip clip--v"><button class="clip__btn" data-full="assets/v/hockey.mp4" data-title="Hockey coaching, Coaching"><video data-src="assets/v/hockey-p.mp4" poster="assets/v/hockey.webp" muted loop playsinline preload="none"></video></button><figcaption><b>Hockey coaching</b><span>Coaching</span></figcaption></figure>
+        </div>
       </div>
     </div>
   </section>
